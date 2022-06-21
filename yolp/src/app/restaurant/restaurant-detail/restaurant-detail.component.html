@@ -1,0 +1,22 @@
+<div class="container">
+    <h1>Name: {{resto.name}}</h1>
+    <br>
+    <h3>City: {{resto.city}}, State: {{resto.state}}</h3>
+
+    <br>
+
+    <h3>Reviews</h3>
+    <table class="table table-hover" *ngIf="resto.reviews !== null && resto.reviews.length > 0; else noReviews">
+        <thead>
+            <th>Rating</th>
+            <th>Note</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let review of resto.reviews">
+                <td>{{review.rating}}</td>
+                <td>{{review.msg}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <ng-template #noReviews>This restaurant has no reviews yet...</ng-template>
+</div>

@@ -1,0 +1,18 @@
+<div class="container">
+    <table class="table table-hover">
+        <thead>
+            <th>Name</th>
+            <th>City</th>
+            <th>State</th>
+            <th colspan="2"></th>
+        </thead>
+        <tbody>
+            <!-- ngFor is a structural directive that loops through an array and takes actions  i.e. for(Restaurant resto : restaurants)-->
+            <tr *ngFor="let resto of restaurants" (click)="goToRestaurantId(resto.id)">
+                <!-- Interpolation: readonly -->
+                <td>{{resto.name}}</td>
+                <td>{{resto.city}}</td>
+                <td>{{resto.state}}</td>
+        </tbody>
+    </table>
+</div>
