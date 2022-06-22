@@ -20,4 +20,8 @@ export class RestaurantService {
   getRestaurantById(id: string): Promise<Restaurant> {
     return firstValueFrom(this.http.get<Restaurant>(this.restoURL + "/" + id));
   }
+
+  createNewRestaurant(resto: Restaurant) {
+    return firstValueFrom(this.http.post(this.restoURL, resto));
+  }
 }

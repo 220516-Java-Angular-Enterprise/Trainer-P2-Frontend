@@ -10,5 +10,14 @@
               <a class="nav-link" routerLink="/restaurants">Restaurant <span class="sr-only"></span></a>
           </li>
       </ul>
+
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item active" *ngIf="user">
+            Welcome {{user.nickname}}
+        </li>
+        <li class="nav-item active">
+            <auth></auth>
+        </li>
+    </ul>
   </div>
 </nav>
