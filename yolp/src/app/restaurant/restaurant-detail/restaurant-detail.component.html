@@ -1,11 +1,12 @@
+<br>
+
 <div class="container">
     <h1>Name: {{resto.name}}</h1>
-    <br>
-    <h3>City: {{resto.city}}, State: {{resto.state}}</h3>
+    <h3>Location: {{resto.city}}, {{resto.state}}</h3>
 
     <br>
 
-    <h3>Reviews</h3>
+    <h2>Reviews</h2>
     <table class="table table-hover" *ngIf="resto.reviews !== null && resto.reviews.length > 0; else noReviews">
         <thead>
             <th>Rating</th>
@@ -19,4 +20,10 @@
         </tbody>
     </table>
     <ng-template #noReviews>This restaurant has no reviews yet...</ng-template>
+
+    <br>
+    <br>
+    
+    <a routerLink="/restaurants">Back to list</a>
 </div>
+

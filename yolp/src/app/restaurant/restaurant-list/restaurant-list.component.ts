@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Restaurant } from 'src/app/models/restaurant';
 import { RestaurantService } from 'src/app/services/restaurant.service';
 
@@ -10,7 +10,7 @@ import { RestaurantService } from 'src/app/services/restaurant.service';
 })
 export class RestaurantListComponent implements OnInit {
 
-  constructor(private restoService: RestaurantService, private router: Router) { }
+  constructor(private restoService: RestaurantService, private router: Router, private currRouter: ActivatedRoute) { }
 
   restaurants: Restaurant[] = [];
 
@@ -20,7 +20,7 @@ export class RestaurantListComponent implements OnInit {
     })
   }
 
-  goToRestaurantId(id: string) {
+  goToRestaurantId(id: string): void {
     this.router.navigateByUrl(`restaurants/${id}`)
   }
 }
